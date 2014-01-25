@@ -1854,6 +1854,7 @@ out_gem_unload:
 	destroy_workqueue(dev_priv->rpswq);
 	destroy_workqueue(dev_priv->flipwq);
 	destroy_workqueue(dev_priv->hpdwq);
+	pm_qos_remove_request(&dev_priv->pm_qos);
 	destroy_workqueue(dev_priv->wq);
 out_mtrrfree:
 	arch_phys_wc_del(dev_priv->gtt.mtrr);
